@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap');
+
+:root {
+  --header-height: 3.5rem;
+
+  /* ==============Color=========== */
+  --first-color: hsl(195, 100%, 30%);
+  --gradient-color: linear-gradient(90deg,
+      hsl(210, 55%, 20%),
+      hsl(192, 62%, 25%));
+  --title-color: hsl(210, 52%, 20%);
+  --text-color: hsl(210, 24%, 15%);
+  --white-color: #fff;
+  --body-color: hsl(210, 55%, 85%);
+
+  /* ============Fonts & font size=========== */
+
+  --body-font: 'Poppins', sans-serif;
+  --secon-font: 'Lora', serif;
+  --large-font-size: 2rem;
+  --medium-font-size: 1.5rem;
+  --small-font-size: 1rem;
+
+  --font-regula: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* ============ z-index=========== */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: var(--body-font);
+  font-size: var(--medium-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/* ============= HEADER =============== */
+
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+}
+
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo{
+  width: 36px;
+}
+
+.nav_toggle,
+.nav_close{
+  display: inline-flex;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px){
+  .nav_menu{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    box-shadow: 0 1px 16px hsla(210, 54%, 24%, .1);
+    padding-block: 3.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    transition: top .8;
+  }
+}
+  
+.nav_list{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 2rem;
+}
+
+.nav_link{
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav_link:hover {
+  color: var(--first-color);
+}
+
+.nav_buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .75rem;
+}
+
+.nav_button-link,
+.nav_button-ghost{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.nav_button-ghost{
+  background-color: hsla(0, 0%, 100%, .3);
+  padding: 1rem 2.5rem;
+  border: 2px solid var(--title-color);
+  border-radius: .75rem;
+}
+
+.nav_close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.show-menu{
+  top: 0;
+}
